@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Page title - directive.js -->
+    <title page-title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <!-- Fonts  -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- CSS Animate -->
+    <link href="Content/animate.css" rel="stylesheet" />
+    <!-- Feature detection -->
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    <div ng-app="app">
+        <div class="container" ng-controller="menuCtrl">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li dropdown ng-if="authentication.isAuth" class="dropdown profile">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="meta">
+                                        <span class="avatar" ng-if="authentication.username === 'ANIVRA'">
+                                            <span class="avatar">
+                                                <img src="Images/avatar1_me.png" class="img-circle" width="30" height="30">
+                                            </span>
+                                        </span>
+                                        <span class="avatar" ng-if="authentication.username !== 'ANIVRA'">
+                                            <span class="avatar">
+                                                <img src="Images/avatar0.png" class="img-circle" width="30" height="30">
+                                            </span>
+                                        </span>
+                                        <span class="dropdown-toggle text" dropdown-toggle>{{authentication.userName}}</span>
+                                        <span class="caret"></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu animated flipInX" role="menu">
+                                    <li>
+                                        <a href="">
+                                            <span class="icon">
+                                                <i class="fa fa-user"></i>
+                                            </span>My Account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <span class="icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </span>Messages
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <span class="icon">
+                                                <i class="fa fa-cog"></i>
+                                            </span>Settings
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a ui-sref="login" ng-click="logout()">
+                                            <span class="icon">
+                                                <i class="fa fa-sign-out"></i>
+                                            </span>Log Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li dropdown ng-if="!authentication.isAuth" class="dropdown profile">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="meta">
+                                        <span class="icon">
+                                            <!--<img src="Images/avatar0.png" class="img-circle" width="30" height="30">-->
+                                            <i class="fa fa-bookmark"></i>
+                                        </span>
+                                        <span class="text">Login/Register</span>
+                                        <span class="caret"></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu animated flipInX" role="menu">
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a ui-sref="home">Home</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a ui-sref="login">
+                                            <span class="icon">
+                                                <i class="fa fa-sign-in"></i>
+                                            </span>Login
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a ui-sref="register">
+                                            <span class="icon">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </span>Register
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div ui-view></div>
+        </div>
+
+    </div>
+
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>    
+
+    <script src="app/app.js"></script>
+    <script src="app/services/authSvc.js"></script>
+    <script src="app/services/authIntercepterSvc.js"></script>
+
+    <script src="app/controllers/homeCtrl.js"></script>
+    <script src="app/controllers/loginCtrl.js"></script>
+    <script src="app/controllers/registerCtrl.js"></script>
+    <script src="app/controllers/menuCtrl.js"></script>
+
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
