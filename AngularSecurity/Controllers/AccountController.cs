@@ -332,7 +332,7 @@ namespace AngularSecurity.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.Username,
-                Email = model.Email,
+                Email = model.Email
             };
 
             if (model.CreateHousehold)

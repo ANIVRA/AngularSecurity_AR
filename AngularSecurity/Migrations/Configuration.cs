@@ -22,6 +22,7 @@ namespace AngularSecurity.Migrations
             var store = new RoleStore<IdentityRole>(context);
             var manager = new RoleManager<IdentityRole>(store);
 
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var role = new IdentityRole { Name = "Admin" };
@@ -43,7 +44,13 @@ namespace AngularSecurity.Migrations
                     UserName = "admin@coderfoundry.com",
                     Email = "admin@coderfoundry.com"
                 };
-                userManager.Create(admin, "Abc123!");
+
+                userManager.Create(admin, "Abc&123!");
+                userManager.AddToRole(admin.Id, "Admin");
+                userManager.AddToRole(admin.Id, "Member");
+
+
+                
             }
         }
     }

@@ -15,14 +15,14 @@ angular.module('app').controller('registerCtrl', ['authSvc', '$timeout', '$state
         ConfirmPassword: "",
         CreateHousehold: true
     };
-
+    var self = this;
     this.register = function () {
 
         var scope = this;
 
         authSvc.register(this.model).then(function (response) {
 
-            this.savedSuccessfully = true;
+            self.savedSuccessfully = true;
             scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
             messageDelay(2, redirectCallback);
         },

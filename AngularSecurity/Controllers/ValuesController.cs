@@ -8,10 +8,11 @@ using System.Web.Http;
 namespace AngularSecurity.Controllers
 {
     [Authorize]
+    [RoutePrefix("api/values")]
     public class ValuesController : ApiController
     {
         // GET api/values
-        [Authorize(Roles="Admin")]
+        //[Authorize(Roles="Admin")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

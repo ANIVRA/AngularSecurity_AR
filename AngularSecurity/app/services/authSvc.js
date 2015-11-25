@@ -43,7 +43,7 @@ angular.module('app')
             deferred.resolve(response);
 
         }).error(function (err, status) {
-            _logOut();
+            _logout();
             deferred.reject(err);
         });
 

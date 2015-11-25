@@ -17,7 +17,7 @@
     <!-- CSS Animate -->
     <link href="Content/animate.css" rel="stylesheet" />
     <!-- Feature detection -->
-    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
 
@@ -37,12 +37,12 @@
                             <li dropdown ng-if="authentication.isAuth" class="dropdown profile">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">
                                     <span class="meta">
-                                        <span class="avatar" ng-if="authentication.username === 'ANIVRA'">
+                                        <span class="avatar" ng-if="authentication.username === 'Current User'">
                                             <span class="avatar">
-                                                <img src="Images/avatar1_me.png" class="img-circle" width="30" height="30">
+                                                <img src="" class="img-circle" width="30" height="30">
                                             </span>
                                         </span>
-                                        <span class="avatar" ng-if="authentication.username !== 'ANIVRA'">
+                                        <span class="avatar" ng-if="authentication.username !== 'Current User'">
                                             <span class="avatar">
                                                 <img src="Images/avatar0.png" class="img-circle" width="30" height="30">
                                             </span>
@@ -142,7 +142,7 @@
     <script src="app/controllers/registerCtrl.js"></script>
     <script src="app/controllers/menuCtrl.js"></script>
 
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 
 </body>
